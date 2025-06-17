@@ -198,6 +198,22 @@ def main_app():
         index=FLAT_AVAILABLE_MODELS.index(st.session_state.get("selected_model", FLAT_AVAILABLE_MODELS[0]))
     )
 
+    ADDITIONAL_LLMS ="""
+    https://www.s2-ai.com/chat
+    https://www.phind.com/
+    https://t3.chat/
+    https://lmarena.ai/?mode=direct
+    https://grok.com/?referrer=website
+    
+    """
+
+    # Add the external link
+    st.sidebar.markdown("---")  # Add a separator line
+    st.sidebar.markdown("---") # Separator
+    with st.sidebar.expander("Additional LLMs"):
+        st.markdown(ADDITIONAL_LLMS)
+    st.sidebar.markdown("---")  # Add another separator line
+
     st.title("GOOOOOGLE")
     st.write(f"Using model: `{st.session_state.selected_model}`")
 
